@@ -20,9 +20,9 @@ class Form extends React.Component {
   render(){
     return(
       <form onSubmit={this.handleSubmit}>
-        <input type="text" 
-        placeholder="Github username" 
-        ref={this.userNameInput} 
+        <input type="text"
+        placeholder="Github username"
+        ref={this.userNameInput}
         required/>
         <button>Add card</button>
       </form>
@@ -41,7 +41,7 @@ class Card extends React.Component {
     const profile = this.props;
     return (
       <div className="github-profile">
-        <img src={profile.avatar_url} />
+        <img src={profile.avatar_url} alt="img-avatar" />
         <div className="info">
           <div className="name">{profile.name}</div>
           <div className="company">{profile.company}</div>
@@ -56,7 +56,7 @@ class App extends React.Component {
       this.state = {
         profiles: []
       };
-  }  
+  }
   addNewProfileData = (profileData) => {
     this.setState(prevState => ({profiles: [...prevState.profiles, profileData],
     }));
